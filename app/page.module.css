@@ -1,0 +1,936 @@
+.page {
+  --green: #155a46;
+  --green-dark: #103f32;
+  --gold: #f4c96b;
+  --cream: #fbf5e8;
+  --text: #26392f;
+  --muted: #68736a;
+
+  min-height: 100vh;
+  overflow: hidden;
+  background: var(--cream);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: 78px;
+  padding: 12px 5%;
+  color: #fff4d8;
+  background: var(--green);
+  border-bottom: 1px solid rgb(244 201 107 / 45%);
+}
+
+.brand {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 12px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.brandIcon {
+  color: var(--gold);
+  font-size: 38px;
+  line-height: 1;
+}
+
+.brandText {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.brandText strong {
+  color: #fff4d8;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 20px;
+  letter-spacing: 1.5px;
+}
+
+.brandText small {
+  color: var(--gold);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: clamp(16px, 2.5vw, 36px);
+}
+
+.nav a {
+  color: #fff4d8;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.nav a:hover {
+  color: var(--gold);
+}
+
+.nav .dashboardLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 11px 24px;
+  border: 1.5px solid var(--gold);
+  border-radius: 999px;
+  color: #fff4d8;
+  font-weight: 700;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.nav .dashboardLink:hover {
+  background: var(--gold);
+  color: var(--green-dark);
+}
+
+.menuButton {
+  display: none;
+  padding: 8px 12px;
+  border: 1px solid var(--gold);
+  border-radius: 8px;
+  background: transparent;
+  color: #fff4d8;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 580px;
+  padding: 70px 8%;
+  overflow: hidden;
+  isolation: isolate;
+  color: white;
+
+  background-color: var(--green-dark);
+  background-image: url("/chhath-puja-2026.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.heroOverlay {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      rgb(9 44 34 / 88%) 0%,
+      rgb(9 44 34 / 72%) 36%,
+      rgb(9 44 34 / 30%) 67%,
+      rgb(9 44 34 / 8%) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgb(9 44 34 / 30%) 0%,
+      transparent 45%
+    );
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 650px);
+}
+
+.eyebrow {
+  margin: 0 0 20px;
+  color: var(--gold);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  line-height: 1.8;
+}
+
+.heroContent h1 {
+  max-width: 700px;
+  margin: 0;
+  color: #fffdf5;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(46px, 6.4vw, 84px);
+  font-weight: 700;
+  line-height: 0.99;
+  letter-spacing: -1.5px;
+  text-shadow: 0 3px 20px rgb(0 0 0 / 20%);
+}
+
+.heroContent h1 span {
+  color: var(--gold);
+}
+
+.sunDivider {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  width: min(100%, 300px);
+  margin: 24px 0;
+  color: var(--gold);
+  font-size: 27px;
+}
+
+.sunDivider span {
+  flex: 1;
+  height: 1px;
+  background: rgb(244 201 107 / 80%);
+}
+
+.heroContent h2 {
+  margin: 0 0 18px;
+  color: var(--gold);
+  font-family: Georgia, "Noto Serif Devanagari", serif;
+  font-size: clamp(23px, 3vw, 34px);
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.heroDescription {
+  max-width: 580px;
+  margin: 0;
+  color: #fffdf5;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.8;
+  text-shadow: 0 1px 5px rgb(0 0 0 / 30%);
+}
+
+.exploreButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 28px;
+  padding: 13px 20px;
+  border: 1px solid var(--gold);
+  border-radius: 5px;
+  color: #fff4d8;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.exploreButton:hover {
+  transform: translateY(-2px);
+  background: var(--gold);
+  color: var(--green-dark);
+}
+
+.exploreButton span {
+  color: var(--gold);
+  font-size: 18px;
+}
+
+.exploreButton:hover span {
+  color: var(--green-dark);
+}
+
+.heroCaption {
+  position: absolute;
+  right: 5%;
+  bottom: 20px;
+  margin: 0;
+  color: #fff4d8;
+  font-family: Georgia, "Noto Serif Devanagari", serif;
+  font-size: 16px;
+  font-weight: 700;
+  text-shadow: 0 2px 8px rgb(0 0 0 / 50%);
+}
+
+/* =========================
+   MEANING OF CHHATH
+========================= */
+
+.introSection {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+  align-items: center;
+  gap: 60px;
+  padding: 90px 8%;
+  background: var(--cream);
+}
+
+.introCopy {
+  max-width: 760px;
+}
+
+.sectionEyebrow {
+  margin: 0 0 14px;
+  color: #a87524;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  line-height: 1.8;
+}
+
+.introCopy h2,
+.sectionHeading h2 {
+  margin: 0;
+  color: #233d30;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(30px, 4vw, 45px);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.introCopy > p:not(.sectionEyebrow) {
+  margin: 20px 0 0;
+  color: #59645b;
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.introCopy .introHindi {
+  color: #a87524;
+  font-family: Georgia, "Noto Serif Devanagari", serif;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.9;
+}
+
+.valuesGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+.valueCard {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  align-items: center;
+  column-gap: 14px;
+  padding: 22px;
+  border: 1px solid #e9dfcc;
+  border-radius: 12px;
+  background: #fffdf8;
+  box-shadow: 0 6px 20px rgb(39 48 32 / 4%);
+}
+
+.valueCard > span {
+  grid-row: span 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: #f8ebce;
+  color: #a87524;
+  font-size: 27px;
+}
+
+.valueCard strong {
+  color: #294738;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 18px;
+}
+
+.valueCard small {
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* =========================
+   FOUR SACRED DAYS
+========================= */
+
+.sacredSection {
+  padding: 80px 5%;
+  background: #f5eddd;
+}
+
+.sectionHeading {
+  max-width: 760px;
+  margin: 0 auto 42px;
+  text-align: center;
+}
+
+.sectionHeading .sectionEyebrow {
+  margin-bottom: 10px;
+}
+
+.sectionHeading h2 {
+  font-size: clamp(34px, 4vw, 48px);
+}
+
+.smallSun {
+  margin: 18px 0;
+  color: #b78b39;
+  font-size: 16px;
+  letter-spacing: 2px;
+}
+
+.sectionHeading > p:last-child {
+  margin: 0;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.ritualGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.ritualCard {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid #e7dcc7;
+  border-radius: 13px;
+  background: #fffdf8;
+  box-shadow: 0 10px 30px rgb(44 48 30 / 6%);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.ritualCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 34px rgb(44 48 30 / 12%);
+}
+
+.ritualImageWrap {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #e9dfcc;
+}
+
+.ritualImage {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.ritualCard:hover .ritualImage {
+  transform: scale(1.04);
+}
+
+.ritualBody {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 22px 18px 24px;
+}
+
+.ritualIcon {
+  flex-shrink: 0;
+  color: #b78b39;
+  font-size: 25px;
+  line-height: 1.2;
+}
+
+.ritualText {
+  min-width: 0;
+}
+
+.dayLabel {
+  display: inline-block;
+  margin: 0 0 7px;
+  color: #a87524;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.ritualText h3 {
+  margin: 0 0 12px;
+  color: #263d30;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 23px;
+  line-height: 1.2;
+}
+
+.ritualText p {
+  margin: 0;
+  color: #62675e;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* =========================
+   OFFERINGS AND CLOSING
+========================= */
+
+.offeringsNote {
+  max-width: 900px;
+  margin: 60px auto 0;
+  padding: 32px;
+  border: 1px solid #e8d6b1;
+  border-radius: 12px;
+  background: #fffaf0;
+  text-align: center;
+}
+
+.offeringsNote h3 {
+  margin: 0 0 14px;
+  color: #294738;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 27px;
+}
+
+.offeringsNote p {
+  margin: 0;
+  color: #62675e;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.offeringsNote strong {
+  color: #8d6421;
+}
+
+.closingNote {
+  max-width: 760px;
+  margin: 48px auto 0;
+  text-align: center;
+}
+
+.closingNote > span {
+  color: #b78b39;
+  font-size: 25px;
+}
+
+.closingNote p {
+  margin: 12px 0;
+  color: #536154;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(18px, 2.5vw, 24px);
+  font-style: italic;
+  line-height: 1.6;
+}
+
+.closingNote strong {
+  color: #a87524;
+  font-family: Georgia, "Noto Serif Devanagari", serif;
+  font-size: 19px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 40px 20px;
+  background: var(--green-dark);
+  color: #fff4d8;
+  text-align: center;
+}
+
+.footerSun {
+  color: var(--gold);
+  font-size: 32px;
+}
+
+.footer strong {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 16px;
+  letter-spacing: 1.2px;
+  line-height: 1.6;
+}
+
+.footer p {
+  margin: 0;
+  color: #e4e7dc;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.footer small {
+  margin-top: 4px;
+  color: var(--gold);
+  font-family: Georgia, "Noto Serif Devanagari", serif;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1100px) {
+  .introSection {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    padding: 70px 6%;
+  }
+
+  .valuesGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .valueCard {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    align-content: start;
+  }
+
+  .valueCard > span {
+    grid-row: auto;
+  }
+
+  .ritualGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+  }
+
+  .ritualText h3 {
+    font-size: 24px;
+  }
+
+  .ritualText p {
+    font-size: 14px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 650px) {
+  .header {
+    min-height: 70px;
+    gap: 10px;
+    padding: 12px 16px;
+  }
+
+  .brand {
+    gap: 8px;
+  }
+
+  .brandIcon {
+    font-size: 30px;
+  }
+
+  .brandText strong {
+    font-size: 15px;
+    letter-spacing: 1px;
+  }
+
+  .brandText small {
+    font-size: 9px;
+    letter-spacing: 0.8px;
+  }
+
+  .nav {
+    gap: 10px;
+  }
+
+  .nav a:not(.dashboardLink) {
+    display: none;
+  }
+
+  .nav .dashboardLink {
+    padding: 9px 13px;
+    font-size: 12px;
+  }
+
+  .menuButton {
+    display: none;
+  }
+
+  .hero {
+    min-height: 620px;
+    align-items: center;
+    padding: 54px 22px 65px;
+    background-position: 62% center;
+  }
+
+  .heroOverlay {
+    background:
+      linear-gradient(
+        90deg,
+        rgb(9 44 34 / 85%) 0%,
+        rgb(9 44 34 / 66%) 65%,
+        rgb(9 44 34 / 35%) 100%
+      ),
+      linear-gradient(
+        0deg,
+        rgb(9 44 34 / 35%) 0%,
+        transparent 70%
+      );
+  }
+
+  .heroContent {
+    width: 100%;
+  }
+
+  .eyebrow {
+    margin-bottom: 18px;
+    font-size: 9px;
+    letter-spacing: 1.8px;
+  }
+
+  .heroContent h1 {
+    font-size: clamp(42px, 12vw, 65px);
+    letter-spacing: -0.5px;
+  }
+
+  .sunDivider {
+    margin: 20px 0;
+  }
+
+  .heroContent h2 {
+    font-size: clamp(21px, 6vw, 28px);
+  }
+
+  .heroDescription {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .exploreButton {
+    margin-top: 24px;
+  }
+
+  .heroCaption {
+    right: 20px;
+    bottom: 16px;
+    font-size: 13px;
+  }
+
+  .introSection {
+    padding: 55px 20px;
+    gap: 30px;
+  }
+
+  .introCopy h2 {
+    font-size: 32px;
+  }
+
+  .introCopy > p:not(.sectionEyebrow) {
+    font-size: 14px;
+  }
+
+  .valuesGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .valueCard {
+    grid-template-columns: 48px 1fr;
+    gap: 4px 12px;
+  }
+
+  .valueCard > span {
+    grid-row: span 2;
+  }
+
+  .sacredSection {
+    padding: 55px 16px;
+  }
+
+  .sectionHeading {
+    margin-bottom: 30px;
+  }
+
+  .sectionHeading h2 {
+    font-size: 34px;
+  }
+
+  .ritualGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .ritualImage {
+    aspect-ratio: 16 / 10;
+  }
+
+  .ritualBody {
+    padding: 20px;
+  }
+
+  .ritualText h3 {
+    font-size: 25px;
+  }
+
+  .ritualText p {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .offeringsNote {
+    margin-top: 38px;
+    padding: 24px 18px;
+  }
+
+  .offeringsNote h3 {
+    font-size: 24px;
+  }
+
+  .closingNote {
+    margin-top: 36px;
+  }
+
+  .footer {
+    padding: 34px 18px;
+  }
+
+  .footer strong {
+    font-size: 13px;
+    letter-spacing: 0.7px;
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 380px) {
+  .header {
+    padding: 10px 12px;
+  }
+
+  .brandText strong {
+    font-size: 13px;
+  }
+
+  .brandText small {
+    font-size: 8px;
+  }
+
+  .nav .dashboardLink {
+    padding: 8px 10px;
+    font-size: 11px;
+  }
+
+  .heroContent h1 {
+    font-size: 39px;
+  }
+}
+
+
+/* =========================
+   ADMIN LOGIN NAVIGATION
+========================= */
+
+.nav .adminLoginLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  border: 1px solid var(--gold);
+  border-radius: 999px;
+  color: var(--gold);
+  font-weight: 700;
+  text-decoration: none;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.nav .adminLoginLink:hover {
+  background: var(--gold);
+  color: var(--green-dark);
+}
+
+/* =========================
+   RESPONSIVE MOBILE NAVIGATION
+========================= */
+
+@media (max-width: 650px) {
+  .header {
+    position: relative;
+  }
+
+  /* Closed menu: hide the links and show the menu button. */
+  .nav {
+    display: none;
+  }
+
+  .menuButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    min-width: 42px;
+    min-height: 42px;
+  }
+
+  /* Open menu: show all navigation links in a dropdown. */
+  .nav.navOpen {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 8px;
+    position: absolute;
+    top: calc(100% + 1px);
+    right: 0;
+    left: 0;
+    z-index: 1001;
+    padding: 16px;
+    background: var(--green);
+    border: 1px solid rgb(244 201 107 / 45%);
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 10px 24px rgb(0 0 0 / 20%);
+  }
+
+  .nav.navOpen a,
+  .nav.navOpen a:not(.dashboardLink) {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 11px 13px;
+  }
+
+  .nav.navOpen .dashboardLink {
+    justify-content: flex-start;
+  }
+
+  .nav.navOpen .adminLoginLink {
+    justify-content: center;
+  }
+}
+
+/* Keep desktop navigation visible on larger screens. */
+@media (min-width: 651px) {
+  .nav {
+    display: flex;
+  }
+
+  .menuButton {
+    display: none;
+  }
+}
